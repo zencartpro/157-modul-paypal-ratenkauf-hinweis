@@ -1,0 +1,96 @@
+PayPal Ratenkauf Hinweis 1.1.0 für Zen Cart 1.5.7 deutsch
+
+Copyright 2021-2022 webchills (www.webchills.at)
+General Public License
+
+Für Shopinhaber mit PayPal Account in Deutschland bietet PayPal für Beträge zwischen 99 und 5000 Euro Ratenkauf an.
+Infos für Shopbetreiber dazu auf:
+https://www.paypal.com/webapps/mpp/installments
+Anspruchsberechtigte Endkunden müssen PayPal ein SEPA Lastschriftmandat erteilen sowie über ein deutsches PayPal Privat-Konto mit bestätigtem Bankkonto als Zahlungsquelle verfügen.
+Infos für Endkunden:
+https://www.paypal.com/de/webapps/mpp/paypal-instalments
+
+Um auf den Ratenkauf hinzuweisen integriert dieses Modul die entsprechenden PayPal Ratenzahlung Hinweise auf:
+- Artikeldetailseite
+- Warenkorb
+- Zahlungsart Auswahlseite
+Verwendet wird dazu Dynamic Messaging, die passenden Beträge werden also in die PayPal Popups übergeben, so dass die Raten bereits vorberechnet werden.
+Infos dazu hier:
+https://www.paypal.com/ppcredit/messaging/best-practices?country.x=DE&locale.x=en_DE
+In der Zen Cart Administration ist einstellbar, ab welchem und bis zu welchem Betrag die Hinweise angezeigt werden soll. Ebenso ist das Layout der Hinweise einstellbar.
+
+Dies ist kein Zahlungsmodul! 
+Die Zahlung läuft ganz normal via PayPal Express, wo der Kunde dann auf der PayPal Seite den Ratenkauf auswählt.
+
+Dieses Modul ist nur für die deutsche Zen-Cart 1.5.7 Version geeignet
+
+Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:
+
+1) Ein guter Texteditor
+Damit ist nicht das in Windows enthaltene Notepad oder Microsoft Word gemeint.
+Sie benötigen einen Texteditor, der utf-8 versteht und auch im Format utf-8 ohne BOM abspeichern kann.
+Empfehlung: UltraEdit (kostenlose 30 Tage Testversion verfügbar)
+Ebenfalls gut geeignet ist der kostenlose Texteditor Notepad++
+
+2) Ein Tool zum Vergleichen von Dateien
+Bei der Installation dieses Moduls ist es erforderlich, dass Sie den Inhalt einiger Ihrer bestehenden Zen-Cart Dateien mit dem Inhalt der neuen Moduldateien vergleichen und die Änderungen zusammenführen ("mergen").
+Empfehlung: BeyondCompare (kostenlose 30 Tage Testversion verfügbar)
+Ebenfalls gut geeignet ist das kostenlose Programm WinMerge
+
+Empfehlung:
+
+Dieses Modul erst in einem Testsystem einbauen und dort konfigurieren/testen und endgültig an die eigenen Wünsche anpassen. Erst dann in einem Liveshop einsetzen! 
+Sichern Sie unbedingt alle Dateien Ihres Shops per FTP und sichern Sie die Datenbank mit phpMyAdmin oder anderen geeigneten Tools!
+
+WICHTIG
+Vor dem Einbau dieser Änderungen:
+BACKUP von Shop und Datenbank machen!
+Keine Haftung, Verwendung auf eigene Gefahr!
+BACKUP gemacht? Ok, dann weiterlesen...
+
+Die Installation erfolgt in folgenden Schritten. Halten Sie diesen Ablauf ein!
+
+INSTALLATION:
+
+1)
+Im Ordner SQL die install.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
+
+2)
+Im Ordner NEUE DATEIEN den Ordner DEINADMIN auf den Namen des Adminverzeichnisses umbenennen und den Inhalt in der vorgegebenen Struktur hochladen, es werden dabei keine bestehenden Dateien überschrieben.
+
+3)
+Im Ordner GEAENDERTE DATEIEN dieses Downloads den Ordner DEINTEMPLATE in den Namen des aktuell verwendeten Templates umbenennen
+Sollten Sie das Template responsive_classic verwenden, dann verwenden Sie den Ordner DEINTEMPLATE_RESPONSIVE und benennen sie ihn auf responsive_classic um, er enthält die für das responsive_classic Template angepassten Dateien
+
+Achtung:
+Beim Hochladen dieser Dateien werden bestehende Dateien überschrieben!
+
+Daher:
+Falls bereits einmal Änderungen an diesen Dateien in der Zen-Cart Installation gemacht wurden, mit WinMerge oder BeyondCompare die Dateien vergleichen und nur die Änderungen in die bestehenden Dateien übernehmen. Keinesfalls einfach so hochladen!!!
+Die Änderungen sind immer kommentiert mit:
+<!--bof PayPal Ratenkauf Hinweis -->
+irgendwas
+<!--eof PayPal Ratenkauf Hinweis -->
+und sollten so leicht identifizierbar sein
+
+Wurden noch keine Änderungen gemacht (Zen-Cart wurde z.B. gerade erst frisch installiert), die Ordner/Dateien aus dem Ordner GEAENDERTE DATEIEN einfach in der vorgegebenen Struktur in Ihr Zen-Cart Verzeichnis hochladen.
+
+4)
+Unter Konfiguration ist nun der neue Menüpunkt PayPal Ratenkauf Hinweis vorhanden.
+Geben Sie hier zunächst Ihre PayPal Client ID ein, die Ihnen in Ihrem PayPal Später Bezahlen Messaging Center angezeigt wird.
+Minimale und Maximale Werte nach Belieben anpassen
+Layout nach Belieben anpassen
+Dann Hinweis aktivieren auf true stellen
+
+5)
+OPTIONAL
+Die Positionierung der Hinweistexte können Sie per CSS in Ihrem Stylesheet falls gewünscht noch feinabstimmen.
+Für die Artikeldetailseite ist dazu die ID #paypalratenkauf vorgesehen, für den Warenkorb die ID #paypalratenkaufcart und für die checkout_payment Seite die ID #paypalratenkaufpayment
+
+
+
+DEINSTALLATION:
+
+Die vier von diesem Modul geänderten Dateien wieder mit den Originaldateien aus Ihrem Backup ersetzen
+Die von diesem Modul neu hinzugefügten Dateien vom Server löschen
+Im Ordner SQL die uninstall.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
