@@ -9,7 +9,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: html_header.php for PayPal Ratenkauf Hinweis 2022-02-27 07:59:39Z webchills $
+ * @version $Id: html_header.php for PayPal Ratenkauf Hinweis 2022-03-24 14:52:39Z webchills $
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
@@ -151,8 +151,8 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
   }
 }
 ?>
-<script type="text/javascript">document.documentElement.className = 'no-fouc';</script>
-<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script type="text/javascript">document.documentElement.className = 'no-fouc';</script>
+  <link rel="stylesheet" type="text/css" href="extras/fontawesome/4.7.0/css/font-awesome.min.css" />
 <!--bof PayPal Ratenkauf Hinweis -->
 <?php if (PAYPAL_PAY_LATER_STATUS == 'true'){ ?>
 <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_PAY_LATER_CLIENT_ID;?>&currency=EUR&components=messages" data-namespace="PayPalSDK"></script>
