@@ -1,5 +1,5 @@
 ########################################################################
-# Paypal Ratenkauf Hinweis 1.1.0 - UNINSTALL - 2022-02-27 - webchills
+# Paypal Ratenkauf Hinweis 1.1.1 - UNINSTALL - 2022-10-18 - webchills
 # Nur ausführen, wenn Sie das Modul aus der Datenbank entfernen wollen!
 ########################################################################
 

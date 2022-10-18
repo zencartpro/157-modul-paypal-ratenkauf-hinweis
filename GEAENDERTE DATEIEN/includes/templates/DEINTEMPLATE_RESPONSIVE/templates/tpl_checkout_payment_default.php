@@ -2,14 +2,14 @@
 /**
  * Page Template
  * Zen Cart German Specific
- * Loaded automatically by index.php?main_page=checkout_payment.<br />
+ * Loaded automatically by index.php?main_page=checkout_payment.
  * Displays the allowed payment modules, for selection by customer.
  * 
  * @copyright Copyright 2003-2022 Zen Cart Development Team
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: tpl_checkout_payment_default.php for Paypal Ratenkauf Hinweis 2022-02-27 08:08:42Z webchills $
+ * @version $Id: tpl_checkout_payment_default.php for Paypal Ratenkauf Hinweis 2022-10-18 15:39:42Z webchills $
  */
 ?>
 <?php echo $payment_modules->javascript_validation(); ?>
@@ -216,7 +216,13 @@
 <fieldset>
 <legend><?php echo TABLE_HEADING_CONDITIONS; ?></legend>
 <div><?php echo TEXT_CONDITIONS_DESCRIPTION;?></div>
+<?php if (($payment_modules->in_special_checkout()) && ($_SESSION['paypal_ec_markflow'] == 1)) {?>
+<?php echo  zen_draw_checkbox_field('conditions', '1', true, 'id="conditions"');?>
+<?php	} else { ?>
 <?php echo  zen_draw_checkbox_field('conditions', '1', false, 'id="conditions"');?>
+<?php
+}
+?>
 <label class="checkboxLabel" for="conditions"><?php echo TEXT_CONDITIONS_CONFIRM; ?></label>
 </fieldset>
 <?php

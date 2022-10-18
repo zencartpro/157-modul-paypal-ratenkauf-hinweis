@@ -1,5 +1,5 @@
 ####################################################################
-# PayPal Ratenkauf Hinweis 1.1.0 - Install - 2022-02-27 - webchills
+# PayPal Ratenkauf Hinweis 1.1.1 - Install - 2022-10-18 - webchills
 ####################################################################
 
 INSERT INTO configuration_group (configuration_group_title, configuration_group_description, sort_order, visible) VALUES
