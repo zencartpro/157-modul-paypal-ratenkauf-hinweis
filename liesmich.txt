@@ -1,4 +1,4 @@
-PayPal Ratenkauf Hinweis 1.1.1 für Zen Cart 1.5.7 deutsch
+PayPal Ratenkauf Hinweis 1.1.2 für Zen Cart 1.5.7 deutsch
 
 Copyright 2021-2022 webchills (www.webchills.at)
 General Public License

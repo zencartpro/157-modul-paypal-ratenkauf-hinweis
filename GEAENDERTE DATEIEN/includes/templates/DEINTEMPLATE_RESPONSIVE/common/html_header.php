@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen Cart German Specific
+ * Zen Cart German Specific (zencartpro adaptations)
  * Common Template
  *
  * outputs the html header. i,e, everything that comes before the \</head\> tag
@@ -9,7 +9,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: html_header.php for PayPal Ratenkauf Hinweis 2022-10-18 15:37:39Z webchills $
+ * @version $Id: html_header.php for PayPal Ratenkauf Hinweis 2022-12-17 19:41:39Z webchills $
  */
 if (!defined('IS_ADMIN_FLAG')) {
     die('Illegal Access');
@@ -28,10 +28,10 @@ require(DIR_WS_MODULES . zen_get_module_directory('meta_tags.php'));
 ?>
 <?php
 
-if (!class_exists('Mobile_Detect')) {
-  include_once(DIR_WS_CLASSES . 'Mobile_Detect.php');
+if (!class_exists('MobileDetect')) {
+  include_once(DIR_WS_CLASSES . 'vendors/MobileDetect/MobileDetect.php');
 }
-  $detect = new Mobile_Detect;
+  $detect = new \Detection\MobileDetect;
   $isMobile = $detect->isMobile();
   $isTablet = $detect->isTablet();
   if (!isset($layoutType)) $layoutType = ($isMobile ? ($isTablet ? 'tablet' : 'mobile') : 'default');
@@ -49,7 +49,7 @@ if (!class_exists('Mobile_Detect')) {
   <meta name="description" content="<?php echo META_TAG_DESCRIPTION; ?>">
   <meta name="language" content="<?php echo META_TAG_LANGUAGE; ?>" />
   <meta name="author" content="<?php echo STORE_NAME ?>">
-  <meta name="generator" content="Zen-Cart 1.5.7 - deutsche Version, http://www.zen-cart-pro.at">
+  <meta name="generator" content="Zen-Cart 1.5.7 - deutsche Version, https://www.zen-cart-pro.at">
 <?php if (defined('ROBOTS_PAGES_TO_SKIP') && in_array($current_page_base,explode(",",constant('ROBOTS_PAGES_TO_SKIP'))) || $current_page_base=='down_for_maintenance' || $robotsNoIndex === true) { ?>
   <meta name="robots" content="noindex, nofollow">
 <?php } ?>
@@ -84,7 +84,7 @@ $manufacturers_id = (isset($_GET['manufacturers_id'])) ? $_GET['manufacturers_id
 <?php echo rss_feed_link_alternate();?>
 <?php } ?>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
 <?php if (file_exists(DIR_WS_TEMPLATE . "jscript/jquery.min.js")) { ?>
 <script type="text/javascript">window.jQuery || document.write(unescape('%3Cscript type="text/javascript" src="<?php echo $template->get_template_dir('.js',DIR_WS_TEMPLATE, $current_page_base,'jscript'); ?>/jquery.min.js"%3E%3C/script%3E'));</script>
 <?php } ?>
@@ -153,7 +153,7 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
 }
 ?>
   <script type="text/javascript">document.documentElement.className = 'no-fouc';</script>
-  <link rel="stylesheet" href="extras/fontawesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="extras/fontawesome/6.2.1/css/all.css" />
 <!--bof PayPal Ratenkauf Hinweis -->
 <?php if (PAYPAL_PAY_LATER_STATUS == 'true'){ ?>
 <script src="https://www.paypal.com/sdk/js?client-id=<?php echo PAYPAL_PAY_LATER_CLIENT_ID;?>&currency=EUR&components=messages" data-namespace="PayPalSDK"></script>
