@@ -1,6 +1,6 @@
-PayPal Ratenkauf Hinweis 1.1.2 für Zen Cart 1.5.7 deutsch
+PayPal Ratenkauf Hinweis 1.2.0 für Zen Cart 1.5.7 deutsch
 
-Copyright 2021-2022 webchills (www.webchills.at)
+Copyright 2021-2023 webchills (www.webchills.at)
 General Public License
 
 Für Shopinhaber mit PayPal Account in Deutschland bietet PayPal für Beträge zwischen 99 und 5000 Euro Ratenkauf an.
@@ -22,7 +22,9 @@ In der Zen Cart Administration ist einstellbar, ab welchem und bis zu welchem Be
 Dies ist kein Zahlungsmodul! 
 Die Zahlung läuft ganz normal via PayPal Express, wo der Kunde dann auf der PayPal Seite den Ratenkauf auswählt.
 
-Dieses Modul ist nur für die deutsche Zen-Cart 1.5.7 Version geeignet
+Dieses Modul ist nur für die deutsche Zen-Cart 1.5.7g Version geeignet.
+Stellen Sie sicher, dass Sie Ihren Shop auf 1.5.7g aktualisiert haben, bevor Sie dieses Modul installieren.
+Die mitgelieferten geänderten Dateien sind auf dem Stand von 1.5.7g!
 
 Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:
 
