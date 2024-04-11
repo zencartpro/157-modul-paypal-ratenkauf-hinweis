@@ -1,6 +1,6 @@
-PayPal Ratenkauf Hinweis 1.2.0 für Zen Cart 1.5.7 deutsch
+PayPal Ratenkauf Hinweis 1.2.1 für Zen Cart 1.5.7 deutsch
 
-Copyright 2021-2023 webchills (www.webchills.at)
+Copyright 2021-2024 webchills (www.webchills.at)
 General Public License
 
 Für Shopinhaber mit PayPal Account in Deutschland bietet PayPal für Beträge zwischen 99 und 5000 Euro Ratenkauf an.
@@ -22,9 +22,9 @@ In der Zen Cart Administration ist einstellbar, ab welchem und bis zu welchem Be
 Dies ist kein Zahlungsmodul! 
 Die Zahlung läuft ganz normal via PayPal Express, wo der Kunde dann auf der PayPal Seite den Ratenkauf auswählt.
 
-Dieses Modul ist nur für die deutsche Zen-Cart 1.5.7g Version geeignet.
-Stellen Sie sicher, dass Sie Ihren Shop auf 1.5.7g aktualisiert haben, bevor Sie dieses Modul installieren.
-Die mitgelieferten geänderten Dateien sind auf dem Stand von 1.5.7g!
+Dieses Modul ist nur für die deutsche Zen-Cart 1.5.7h Version geeignet.
+Stellen Sie sicher, dass Sie Ihren Shop auf 1.5.7h aktualisiert haben, bevor Sie dieses Modul installieren.
+Die mitgelieferten geänderten Dateien sind auf dem Stand von 1.5.7h!
 
 Für den Einbau dieses Moduls sollten Sie über folgende Werkzeuge verfügen:
 
@@ -55,7 +55,8 @@ Die Installation erfolgt in folgenden Schritten. Halten Sie diesen Ablauf ein!
 INSTALLATION:
 
 1)
-Im Ordner SQL die install.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
+Im Ordner SQL die install.sql mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden.
+Unter PHP 8.2 kann dabei ein völlig harmloses Debug Log erzeugt werden (Undefined array key...). Einfach löschen.
 
 2)
 Im Ordner NEUE DATEIEN den Ordner DEINADMIN auf den Namen des Adminverzeichnisses umbenennen und den Inhalt in der vorgegebenen Struktur hochladen, es werden dabei keine bestehenden Dateien überschrieben.
